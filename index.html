@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAINROT TRADE</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0b0b0e;
+            color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #00e5ff;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9em;
+            margin-bottom: 25px;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #2d0e0e 0%, #1a0505 100%);
+            border: 2px solid #ef4444;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            font-size: 0.9em;
+        }
+        .main-card {
+            background-color: #15151a;
+            border: 1px solid #262630;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .main-card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #00e5ff;
+            padding-bottom: 8px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px 0;
+            font-size: 0.9em;
+            color: #9ca3af;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #2d2d3d;
+            background-color: #1c1c24;
+            color: white;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: all 0.2s;
+        }
+        textarea {
+            resize: vertical;
+            height: 80px;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            border-color: #00e5ff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+        }
+        input[type="file"] {
+            padding: 8px;
+            background: #15151a;
+            cursor: pointer;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #00e5ff, #00a8ff);
+            color: #050508;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
+        }
+        .btn-submit:hover {
+            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.6);
+        }
+        .post-card {
+            background-color: #15151a;
+            border: 1px solid #262630;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+        .trade-flow {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .arrow { color: #00e5ff; margin: 0 10px; }
+        
+        .post-detail {
+            background-color: #1c1c24;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: #d1d5db;
+            margin: 12px 0;
+            white-space: pre-wrap;
+            border-left: 3px solid #4b5563;
+        }
+        .post-img {
+            max-width: 100%;
+            max-height: 250px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: block;
+            object-fit: contain;
+            background-color: #0b0b0e;
+            border: 1px solid #262630;
+        }
+        .btn-chat {
+            display: inline-block;
+            background-color: #27273a;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-chat:hover {
+            background-color: #38bdf8;
+            color: #121214;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>BRAINROT TRADE</h1>
+    <div class="subtitle">ブレインロット専用・画像付き物々交換所</div>
+    
+    <div class="warning-box">
+        🚨 <strong>【警告】PayPay・現金取引は即IP BAN</strong><br>
+        RMT行為や詐欺の疑いがある書き込みは、自動記録されているIPアドレスを元に即座にサイトアクセス禁止処分とします。
+    </div>
+
+    <div class="main-card">
+        <h3>トレードを募集する</h3>
+        
+        <label>あなたのプレイヤー名 (表示用)</label>
+        <input type="text" id="username" placeholder="例: 匿名ラマさん">
+
+        <label>【出すキャラ】</label>
+        <input type="text" id="offer" placeholder="例: Llama Rot 変異付き">
+
+        <label>【欲しいキャラ】</label>
+        <input type="text" id="request" placeholder="例: 通常ドラゴン">
+
+        <label>詳細説明（コンディションや条件など）</label>
+        <textarea id="details" placeholder="例: ロビーでの直接トレード希望です。今日の夜ならいつでもいけます！"></textarea>
+
+        <label>キャラの写真・スクリーンショット（任意）</label>
+        <input type="file" id="imageInput" accept="image/*">
+
+        <button class="btn-submit" onclick="addPost()">トレード募集を送信する</button>
+    </div>
+
+    <div class="post-list">
+        <h2>最新のトレード募集</h2>
+        <div id="postList">
+            <!-- サンプルデータ -->
+            <div class="post-card">
+                <div class="post-meta">
+                    <span>投稿者: 開発テストユーザー</span>
+                    <span>テスト表示中</span>
+                </div>
+                <div class="trade-flow">
+                    【出】 Llama Rot <span class="arrow">➔</span> 【求】 Secret Character
+                </div>
+                <div class="post-detail">最初からいるラマです！気軽にチャットおねがいします。</div>
+                <button class="btn-chat" onclick="location.href='chat.html?room=sample_room_123'">💬 この人とチャットで交渉する</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ローカルストレージから過去の投稿を読み込む処理
+    window.onload = function() {
+        const savedPosts = JSON.parse(localStorage.getItem('br_posts')) || [];
+        savedPosts.forEach(post => {
+            renderPost(post);
+        });
+    };
+
+    function addPost() {
+        const username = document.getElementById('username').value.trim();
+        const offer = document.getElementById('offer').value.trim();
+        const request = document.getElementById('request').value.trim();
+        const details = document.getElementById('details').value.trim();
+        const imageInput = document.getElementById('imageInput');
+
+        if (!username || !offer || !request) {
+            alert('名前、出すキャラ、欲しいキャラは必須入力です！');
+            return;
+        }
+
+        const filterPattern = /[0-9０-９]円|paypay|PayPay|ペイペイ|ライン|LINE|購入|買う|売る/i;
+        if (filterPattern.test(username) || filterPattern.test(offer) || filterPattern.test(request) || filterPattern.test(details)) {
+            alert('現金やPayPay、外部SNSへの直接誘導が疑われるキーワードが含まれているため投稿できません。');
+            return;
+        }
+
+        const roomId = 'room_' + Math.floor(Math.random() * 1000000);
+        
+        if (imageInput.files && imageInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                saveAndRenderPost(username, offer, request, details, roomId, e.target.result);
+            };
+            reader.readAsDataURL(imageInput.files[0]);
+        } else {
+            saveAndRenderPost(username, offer, request, details, roomId, null);
+        }
+    }
+
+    function saveAndRenderPost(username, offer, request, details, roomId, imageSrc) {
+        const postData = { username, offer, request, details, roomId, imageSrc, time: '数分前' };
+        
+        // ローカルストレージに一時保存
+        const savedPosts = JSON.parse(localStorage.getItem('br_posts')) || [];
+        savedPosts.unshift(postData);
+        localStorage.setItem('br_posts', JSON.stringify(savedPosts));
+
+        renderPost(postData);
+
+        // リセット
+        document.getElementById('username').value = '';
+        document.getElementById('offer').value = '';
+        document.getElementById('request').value = '';
+        document.getElementById('details').value = '';
+        document.getElementById('imageInput').value = '';
+    }
+
+    function renderPost(post) {
+        const postList = document.getElementById('postList');
+        const newPost = document.createElement('div');
+        newPost.className = 'post-card';
+        
+        let imageHTML = post.imageSrc ? `<img src="${post.imageSrc}" class="post-img" alt="キャラ写真">` : '';
+        let detailsHTML = post.details ? `<div class="post-detail">${escapeHTML(post.details)}</div>` : '';
+        
+        newPost.innerHTML = `
+            <div class="post-meta">
+                <span>投稿者: ${escapeHTML(post.username)}</span>
+                <span>${post.time}</span>
+            </div>
+            ${imageHTML}
+            <div class="trade-flow">
+                【出】 ${escapeHTML(post.offer)} <span class="arrow">➔</span> 【求】 ${escapeHTML(post.request)}
+            </div>
+            ${detailsHTML}
+            <button class="btn-chat" onclick="location.href='chat.html?room=${post.roomId}'">💬 この人とチャットで交渉する</button>
+        `;
+        postList.insertBefore(newPost, postList.firstChild);
+    }
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>"']/g, match => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;' }[match]));
+    }
+</script>
+</body>
+</html>
